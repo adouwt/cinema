@@ -1,0 +1,81 @@
+	/*2017-12-31 by 迩伶贰*/
+	/*table 表格基本css*/
+	button {
+		height: 30px;
+		width: 30px;
+		background-color: green;
+		border:none;
+		border-radius: 5px;
+		color: #fff;
+	}
+
+	.disabled[disabled] {
+		display: none;
+	}
+	button.selected {
+		background-color: red;
+	}
+	.selected[selected] {
+		pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+    background-color: #ddd;
+    color: #ddd;
+	}
+	.index span{
+		display: inline-block;
+		width: 20px;
+		text-align: center;
+		background:rgba(0,0,0,0.2);
+
+		margin-right: 20px;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+	.gray ,.green, .cur-select{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+		margin-right: 5px;
+		vertical-align: middle;
+
+	}
+	.gray {
+		background-color: #ddd;
+	}
+	.green {
+		background-color: green;
+	}
+  .cur-select {
+	  background-color: red;
+  }
+  .ad-submit {
+  	width: 50px;
+  	margin-top: 20px;
+  }
+  .ad-submit[disabled] {
+  	background-color: rgba(0,0,0,0.2)
+  }
+  .ad-table {
+  	margin:0 auto;
+  	border-collapse: collapse;
+  }
+  .ad-table td {
+  	padding: 3px;
+  }
+  .screen {
+  	width: auto;
+  	height: 20px;
+  	background-color: #ddd;
+  	margin-bottom: 30px;
+  	margin-top: 20px;
+  }
+  .seat-status {
+  	margin-top: 20px;
+  }
