@@ -51,7 +51,7 @@ function cinema(x, y, emptyArr, selectArr, className) {
 
     		if((emRow-1) == i && (emcol-1) == j) {
     			mark = 'disabled';
-    		} 
+    		}
     	}) // 遍历空座位的数组，如果满足位置就返回一个字符串 变量，拼接在td的字符串里
 
     	if(selectArr.length) {
@@ -61,7 +61,7 @@ function cinema(x, y, emptyArr, selectArr, className) {
       		let emcol = parseInt(currentVal[1]);
       		if((emRow-1) == i && (emcol-1) == j) {
       			selected = 'selected';
-      		} 
+      		}
       	})
     	}  // 遍历 已经选择的座位的数组 满足位置的条件 返回字符串
 
@@ -72,19 +72,21 @@ function cinema(x, y, emptyArr, selectArr, className) {
      data += '</tr>';
   }
   var otherTemplate =`
-  			</tbody><table> 
+  			</tbody><table>
   			<div class="text-center seat-status">
     			<span class="gray"></span><span>已选</span>
     			<span class="green"></span><span>可选</span>
     			<span class="cur-select"></span><span>当前选中</span>
     			<div class="">
     				<button class="ad-submit" ${btnDisabled}>提交</button>
-    			<div> 
+    			<div>
   			<div>
   		`;
   data += otherTemplate;
   $('.'+ className).html('').html(data);
 
+	// 将从后端传来的数据 数组清空，重新传当前用户 选择的数据 数组
+	selectArr.length = 0;
   $('body').on('click', 'td button', function() {
   	var _thisRow   = $(this).parents("tr").index()+1;
   	var _thisCol   = $(this).parent().index();
@@ -107,6 +109,7 @@ function cinema(x, y, emptyArr, selectArr, className) {
 	  } else {
 	  	$('.ad-submit').attr('disabled', false)
 	  }
+
    	return selectArr
    })
 }
