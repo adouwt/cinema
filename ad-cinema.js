@@ -47,9 +47,12 @@ function cinema(x, y, emptyArr, selectArr, className) {
     	emptyArr.map((currentVal, index) => {
     		var currentVal = currentVal.split('-');
     		let emRow = parseInt(currentVal[0]);
-    		let emcol = parseInt(currentVal[1]);
+    		let emCol = parseInt(currentVal[1]);
 
-    		if((emRow-1) == i && (emcol-1) == j) {
+				if(emRow>x || emRow <= 0) console.warn('空座位的行数大于当前控制的行数或者小于最小行数');
+				if(emCol>y || emCol <= 0) console.warn('空座位的列数大于当前控制的列数或者小于最小列数');
+
+    		if((emRow-1) == i && (emCol-1) == j) {
     			mark = 'disabled';
     		}
     	}) // 遍历空座位的数组，如果满足位置就返回一个字符串 变量，拼接在td的字符串里
